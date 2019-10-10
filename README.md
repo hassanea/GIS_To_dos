@@ -1,3 +1,8 @@
+# Reroot's GIS To Do List
+
+Live version of website for testing purposes is located here: 
+   * [E.H.'s aws S3 Bucket](http://gis-todos.s3-website.us-east-2.amazonaws.com)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

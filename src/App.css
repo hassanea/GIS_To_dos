@@ -20,3 +20,22 @@
 .App-link {
   color: #09d3ac;
 }
+
+header, section, footer, aside, nav, main, article, figure {
+    display: block; 
+}
+
+.skip-link {
+    position: absolute;
+    text-decoration: underline;
+    top: -40px;
+    left: 0;
+    background: orange;
+    color: navy;
+    padding: 8px;
+    z-index: 100;
+}
+
+.skip-link:focus {
+    top: 0;
+}

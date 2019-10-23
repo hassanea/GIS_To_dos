@@ -1,15 +1,19 @@
 import React from 'react';
 import './App.css';
-import Nav from './Nav.js';
+import Appbar from './Appbar.js';
+import Search from './Search.js';
 import Header from './Header.js';
 import Footer from './Footer.js';
 
 function App() {
   return (
     <div className="App">
-      {/* Navbar component */
+      {/* Appbar component */
       }
-      <Nav/>
+      <Appbar/>
+      {/* Search component */
+      }
+      <Search/>
       {
       /* Main content */
       }

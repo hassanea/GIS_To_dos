@@ -1,3 +1,9 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0; 
+}
+
 .App {
   text-align: center;
 }
@@ -7,7 +13,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+/*  background-color: #282c34;*/
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -38,4 +44,39 @@ header, section, footer, aside, nav, main, article, figure {
 
 .skip-link:focus {
     top: 0;
+}
+
+main {
+    height: auto;
+    min-height: 100%;
+}
+
+.MuiIcon-colorPrimary {
+    color: darkgreen;
+}
+
+.search-toDos {
+  width: 100%;
+  padding: 20px 20px 20px 60px;
+  background-image: url('./icons/search.svg');
+  background-repeat: no-repeat;
+  background-position: 20px center;
+  background-size: 1.2em;
+  font-size: 1.2rem;
+  font-weight: bolder;
+/*  border: 2px #022 solid;*/
+  outline: none; 
+}
+
+.logo-foot {
+    float: left;
+    padding: 20px;
+    width:300px;
+}
+
+.footer {
+   position: absolute;
+   clear: both;
+   width: 100%;
+   height: auto;   
 }

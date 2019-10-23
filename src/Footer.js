@@ -7,9 +7,10 @@ class Footer extends React.Component {
     return (
         
         <footer className="footer w3-indigo">
-        <div>
-        <img src={logo} alt="Reroot Pontiac's Logo" className="logo logo-foot"/><br/>
-        </div> © Reroot Task Scheduler 2019</footer>
+        <div className="w3-half w3-container">
+        <img src={logo} alt="Reroot Pontiac's Logo" className="logo logo-foot"/>
+        </div>
+         <div className="w3-half w3-container w3-center w3-padding-24">© Reroot Task Scheduler 2019</div> </footer>
     );
   }
 }

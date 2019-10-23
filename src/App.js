@@ -3,6 +3,7 @@ import './App.css';
 import Appbar from './Appbar.js';
 import Search from './Search.js';
 import Header from './Header.js';
+//import Buttonbar from './Buttonbar.js';
 import Footer from './Footer.js';
 
 function App() {
@@ -23,12 +24,17 @@ function App() {
       /* Header component */
       }
       <Header/>
+      {
+//      <Buttonbar/>
+      }
       </div>
       </main>
       {
       /* Footer component */
       }
+      <div className="w3-row">
       <Footer/>
+      </div>
     </div>
   );
 }

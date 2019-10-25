@@ -55,6 +55,10 @@ main {
     color: darkgreen;
 }
 
+.w3-container {
+    margin: 0;
+}
+
 .search-toDos {
   width: 100%;
   padding: 20px 20px 20px 60px;
@@ -67,6 +71,11 @@ main {
 /*  border: 2px #022 solid;*/
   outline: none; 
 }
+
+#map {
+    width: 100%;
+    height: 100vh;
+      }
 
 .logo-foot {
     float: left;

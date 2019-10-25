@@ -28,7 +28,7 @@ export default function ButtonAppBar() {
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar>
-          <IconButton edge="start" className={classes.menuButton} color="secondary" aria-label="Menu">
+          <IconButton edge="start" className={classes.menuButton} color="secondary" aria-label="Menu" href="/">
             <EcoIcon color="action" fontSize="large"/>
           </IconButton>
           <Typography variant="h6" className={classes.title}>

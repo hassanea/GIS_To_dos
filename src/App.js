@@ -3,7 +3,7 @@ import './App.css';
 import Appbar from './Appbar.js';
 import Search from './Search.js';
 //import Header from './Header.js';
-//import Buttonbar from './Buttonbar.js';
+import Buttonbar from './Buttonbar.js';
 import Map from './Map.js';
 import Footer from './Footer.js';
 
@@ -28,10 +28,9 @@ function App() {
       {
 //      <Header/>
       }
+      <Buttonbar/>
       <Map/>
-      {
-//      <Buttonbar/>
-      }
+      
       </div>
       </div>
       </main>

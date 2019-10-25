@@ -8,7 +8,6 @@ const urlMapsAPI = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBm3mUKF6xp
 class Map extends React.Component {
     
     
-    
 componentDidMount(){
     this.renderMap()
     
@@ -37,6 +36,7 @@ componentDidMount(){
           draggable: true   
         })
         
+        map.setMapTypeId(window.google.maps.MapTypeId.HYBRID);
         
                 // Infowindow initialization
         let infowindow = new window.google.maps.InfoWindow({maxWidth: 200})
@@ -49,7 +49,7 @@ componentDidMount(){
     title: "Reroot Pontiac"            
   })
   
-         
+                
 // Initializes Infowindow's content.          
 let contentString = `<div> ${marker.title} </div>`            
             

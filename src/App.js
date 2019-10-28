@@ -2,9 +2,10 @@ import React from 'react';
 import './App.css';
 import Appbar from './Appbar.js';
 import Search from './Search.js';
-//import Header from './Header.js';
-import Buttonbar from './Buttonbar.js';
-import Map from './Map.js';
+////import Header from './Header.js';
+//import Buttonbar from './Buttonbar.js';
+//import Map from './Map.js';
+import Main from './Main.js';
 import Footer from './Footer.js';
 
 function App() {
@@ -19,27 +20,11 @@ function App() {
       {
       /* Main content */
       }
-      <main id="mainContent" tabIndex="-1">
-      <div className="w3-row">
-       <div className="w3-container w3-col">
-      {
-      /* Header component */
-      }
-      {
-//      <Header/>
-      }
-      <Buttonbar/>
-      <Map/>
-      
-      </div>
-      </div>
-      </main>
+      <Main/>
       {
       /* Footer component */
       }
-      <div className="w3-row">
       <Footer/>
-      </div>
     </div>
   );
 }

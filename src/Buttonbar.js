@@ -9,7 +9,7 @@ class Buttonbar extends React.Component {
       
     return (
         
-    <div className="w3-bar">
+    <div className="w3-bar btnBar">
         <a href="/" className="w3-bar-item w3-button" title="Create Task"> <AddCircleIcon fontSize="large" /> </a>
         <a href="/" className="w3-bar-item w3-button" title="Modify Task"> <RemoveCircleIcon fontSize="large" /> </a>
         <a href="/" className="w3-bar-item w3-button" title="Task Overview"> <FormatListBulletedIcon fontSize="large" /> </a>

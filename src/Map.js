@@ -1,8 +1,8 @@
 import React from 'react';
 
 
-
 const urlMapsAPI = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBm3mUKF6xpj3HzgFFALZZet1FW7ZOdqKs&callback=initMap';
+
 
 
 class Map extends React.Component {
@@ -48,10 +48,9 @@ componentDidMount(){
     animation: window.google.maps.Animation.DROP,            
     title: "Reroot Pontiac"            
   })
-  
-                
+            
 // Initializes Infowindow's content.          
-let contentString = `<div> ${marker.title} </div>`            
+let contentString = `<div> ${marker.title} </div>`        
             
 // Marker's click event.            
 marker.addListener('click', function() {
@@ -61,6 +60,7 @@ marker.addListener('click', function() {
 
         // Open An InfoWindow
         infowindow.open(map, marker)
+    
       })    // Populates the marker's state with the markers.
 
                      
@@ -82,7 +82,6 @@ marker.addListener('click', function() {
 }
 
 
-
 /* 
 
 scriptLoad function: Loads the Google Maps API script asychronously 
@@ -99,5 +98,6 @@ const scriptLoad = (url) => {
         index.parentNode.insertBefore(script, index)
         
     }
+
 
 export default Map;

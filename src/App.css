@@ -23,6 +23,10 @@ html, body {
   color: white;
 }
 
+*:focus {
+    outline-color: #191970; /* midnightblue */
+}
+
 .App-link {
   color: #09d3ac;
 }
@@ -49,10 +53,6 @@ header, section, footer, aside, nav, main, article, figure {
 main {
     height: auto;
     min-height: 100%;
-}
-
-.MuiIcon-colorPrimary {
-    color: darkgreen;
 }
 
 .w3-container {

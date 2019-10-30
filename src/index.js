@@ -5,9 +5,8 @@ import './index.css';
 import App from './App';
 /* w3 CSS */
 import 'w3-css/w3.css';
-/* FontAwesome Icons */
-//import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import * as serviceWorker from './serviceWorker';
+
 
 ReactDOM.render(<BrowserRouter><App /></BrowserRouter>, document.getElementById('root'));
 

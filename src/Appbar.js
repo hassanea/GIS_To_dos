@@ -15,12 +15,18 @@ const useStyles = makeStyles(theme => ({
   },
   title: {
     flexGrow: 1,
+    color: "#ffc107",
+    textShadow: "2px 2px 4px #000000",
   },
+  leafIcon: {
+    color: "#8bc34a",
+},    
 }));
 
 export default function ButtonAppBar() {
   const classes = useStyles();
-
+  const headingTitle = "Reroot Task Scheduler";    
+    
   return (
     
     <div>
@@ -29,10 +35,10 @@ export default function ButtonAppBar() {
       <AppBar position="static">
         <Toolbar>
           <IconButton edge="start" className={classes.menuButton} color="secondary" aria-label="Menu" href="/">
-            <EcoIcon color="action" fontSize="large"/>
+            <EcoIcon fontSize="large" className={classes.leafIcon}/>
           </IconButton>
-          <Typography variant="h6" className={classes.title}>
-            Reroot Task Scheduler
+          <Typography variant="h5" className={classes.title}>
+            {headingTitle}
           </Typography>
           <Button color="inherit">Login</Button>
         </Toolbar>

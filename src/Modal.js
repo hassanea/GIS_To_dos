@@ -14,7 +14,7 @@ const useStyles = makeStyles(theme => ({
     justifyContent: 'center',
   },
   paper: {
-    backgroundColor: theme.palette.background.paper,
+    backgroundColor: '#607d8b',
     border: '2px solid #000',
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 4, 3),
@@ -59,7 +59,7 @@ export default function TransitionsModal() {
       
             <div className="w3-responsive">
              <table className="w3-table-all w3-card-4 w3-hoverable w3-centered">
-              <tr>
+              <tr className="w3-pale-yellow">
                 <th>Task ID</th>
                 <th>Task Name</th>
                 <th>Task Description</th>

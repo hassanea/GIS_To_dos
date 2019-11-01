@@ -59,6 +59,7 @@ export default function TransitionsModal() {
       
             <div className="w3-responsive">
              <table className="w3-table-all w3-card-4 w3-hoverable w3-centered">
+              <thead>    
               <tr className="w3-pale-yellow">
                 <th>Task ID</th>
                 <th>Task Name</th>
@@ -67,11 +68,12 @@ export default function TransitionsModal() {
                 <th>Task Complete</th>
                 <th>Reminder</th>
               </tr>
-      
+              </thead>
              {
                 /* Dummy rows below!!! */
               
              }
+            <tbody>
               <tr>
                 <td>01</td>
                 <td>Feed Chicken</td>
@@ -89,7 +91,7 @@ export default function TransitionsModal() {
                 <td> <button className="w3-button" title="Task complete"> <DoneOutlineIcon /> </button> </td>
                 <td><button className="w3-button" title="Task reminder"> <NotificationsActiveIcon /> </button> </td>
               </tr>
-                
+            </tbody>  
       
              </table>
             </div>

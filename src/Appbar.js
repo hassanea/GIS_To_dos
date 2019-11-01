@@ -17,7 +17,8 @@ const useStyles = makeStyles(theme => ({
     flexGrow: 1,
     color: "#ffc107",
     textShadow: "2px 2px 4px #000000",
-  },
+    animation: "animatezoom 0.8s",
+},
   leafIcon: {
     color: "#8bc34a",
 },    
@@ -29,8 +30,8 @@ export default function ButtonAppBar() {
     
   return (
     
-    <div>
-      <a href="#mainContent" className="skip-link" title="Skip to main content">Skip to main content</a>
+    <nav aria-label="Navigation">
+      <a href="#mainContent" className="skip-link" title="Skip to main content" aria-label="Skip to main content">Skip to main content</a>
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar>
@@ -44,6 +45,6 @@ export default function ButtonAppBar() {
         </Toolbar>
       </AppBar>
     </div>
-    </div>      
+    </nav>      
   );
 }

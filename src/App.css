@@ -59,6 +59,16 @@ main {
     margin: 0;
 }
 
+@keyframes animatezoom {
+    from {
+        transform:scale(0)
+    }
+
+    to {
+        transform: scale(1)
+    }
+}
+
 .search-toDos {
   width: 100%;
   padding: 20px 20px 20px 60px;

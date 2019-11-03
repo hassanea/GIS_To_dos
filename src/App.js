@@ -1,27 +1,37 @@
 import React from 'react';
+import { Route } from 'react-router-dom';
 import './App.css';
-import Appbar from './Appbar.js';
-import Search from './Search.js';
-import Main from './Main.js';
-import Footer from './Footer.js';
+import Scheduler from './Scheduler.js';
+import Create from './Create.js';
+import Modify from './Modify.js';
+import Overview from './Overview.js';
+import About from './About.js';
 
 function App() {
   return (
     <div className="App">
-      {/* Appbar component */
+      {/* Scheduler component */
       }
-      <Appbar/>
-      {/* Search component */
-      }
-      <Search/>
-      {
-      /* Main content */
-      }
-      <Main/>
-      {
-      /* Footer component */
-      }
-      <Footer/>
+      <Route exact path='/' render={() => (
+        <Scheduler/>
+        )}/>
+      
+       <Route path='/create' render={() => (
+        <Create/>
+        )}/>
+      
+        <Route path='/modify' render={() => (
+        <Modify/>
+        )}/>
+      
+        <Route path='/overview' render={() => (
+        <Overview/>
+        )}/>
+      
+        <Route path='/about' render={() => (
+        <About/>
+        )}/>
+      
     </div>
   );
 }

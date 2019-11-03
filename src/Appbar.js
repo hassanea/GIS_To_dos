@@ -41,7 +41,7 @@ export default function ButtonAppBar() {
           <Typography variant="h5" className={classes.title}>
             {headingTitle}
           </Typography>
-          <Button color="inherit">Login</Button>
+          <Button color="inherit" href="/about">About</Button>
         </Toolbar>
       </AppBar>
     </div>

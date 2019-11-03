@@ -1,0 +1,49 @@
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import Paper from '@material-ui/core/Paper';
+import Breadcrumbs from '@material-ui/core/Breadcrumbs';
+import Link from '@material-ui/core/Link';
+import HomeIcon from '@material-ui/icons/Home';
+import AddCircleIcon from '@material-ui/icons/AddCircle';
+
+
+const useStyles = makeStyles(theme => ({
+  root: {
+    padding: theme.spacing(1, 2),
+  },
+  link: {
+    display: 'flex',
+  },
+  icon: {
+    marginRight: theme.spacing(0.5),
+    width: 20,
+    height: 20,
+    fontWeight: 'bolder',
+      
+  },
+}));
+
+
+
+export default function IconBreadcrumbs() {
+  const classes = useStyles();
+
+  return (
+    <Paper elevation={0} className={classes.root}>
+      <Breadcrumbs aria-label="breadcrumb">
+        <Link color="inherit" href="/" className={classes.link}>
+          <HomeIcon className={classes.icon} />
+          Home
+        </Link>
+        <Link
+          color="inherit"
+          href="/create"
+          className={classes.link}
+        >
+          <AddCircleIcon className={classes.icon} />
+          Create Task
+        </Link>
+      </Breadcrumbs>
+    </Paper>
+  );
+}

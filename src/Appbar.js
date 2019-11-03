@@ -1,9 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import EcoIcon from '@material-ui/icons/Eco';
 const useStyles = makeStyles(theme => ({
@@ -21,6 +21,9 @@ const useStyles = makeStyles(theme => ({
 },
   leafIcon: {
     color: "#8bc34a",
+},
+  linkBtn: {
+    textDecoration: "none",
 },    
 }));
 
@@ -41,7 +44,7 @@ export default function ButtonAppBar() {
           <Typography variant="h5" className={classes.title}>
             {headingTitle}
           </Typography>
-          <Button color="inherit" href="/about">About</Button>
+          <Link to="/about" className={classes.linkBtn}>About</Link>
         </Toolbar>
       </AppBar>
     </div>

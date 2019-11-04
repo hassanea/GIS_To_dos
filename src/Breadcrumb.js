@@ -2,7 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Breadcrumbs from '@material-ui/core/Breadcrumbs';
-import Link from '@material-ui/core/Link';
+import { Link } from 'react-router-dom';
 import HomeIcon from '@material-ui/icons/Home';
 import AddCircleIcon from '@material-ui/icons/AddCircle';
 
@@ -31,13 +31,13 @@ export default function IconBreadcrumbs() {
   return (
     <Paper elevation={0} className={classes.root}>
       <Breadcrumbs aria-label="breadcrumb">
-        <Link color="inherit" href="/" className={classes.link}>
+        <Link color="inherit" to="/" className={classes.link}>
           <HomeIcon className={classes.icon} />
           Home
         </Link>
         <Link
           color="inherit"
-          href="/create"
+          to="/create"
           className={classes.link}
         >
           <AddCircleIcon className={classes.icon} />

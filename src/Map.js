@@ -62,9 +62,7 @@ marker.addListener('click', function() {
         infowindow.open(map, marker)
     
       })    // Populates the marker's state with the markers.
-
-                     
-
+        
         
         }
     
@@ -73,10 +71,11 @@ marker.addListener('click', function() {
       
     return (
         
-    <div className="map-Container" role="application" aria-label="Interactive Map" tabIndex="0">
-        <div id="map" className="w3-margin-top w3-margin-bottom"></div> 
-    </div> 
-        
+    <div role="region">   
+        <div className="map-Container" role="application" aria-label="Interactive Map" tabIndex="0">
+          <div id="map" className="w3-margin-top w3-margin-bottom"></div> 
+        </div> 
+    </div>     
     );
   }
 }

@@ -30,9 +30,9 @@ componentDidMount(){
         // eslint-disable-next-line
         let map = new window.google.maps.Map(document.getElementById('map'), {
           // Sets Map's center.    
-          center: {lat: 42.6389216, lng: -83.2910468},
+          center: {lat: 42.63829635, lng: -83.30672549},
           // Sets Map's zoom level.    
-          zoom: 8,   
+          zoom: 18,   
           draggable: true   
         })
         

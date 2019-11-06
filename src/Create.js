@@ -30,14 +30,15 @@ handleSubmit(event) {
          <Breadcrumb/>
          <div className="w3-container"> 
          <div className="w3-card-4">
-         <div class="w3-container w3-green">
+         <div className="w3-container w3-green">
       
          <h1>Create Task:</h1>
         </div>
         </div>   
        <form onSubmit={this.handleSubmit} className="w3-container">
-            <p><label htmlfor="taskName" className="w3-left-align">Name:</label>
+            <p><label htmlFor="taskName" className="w3-left-align">Name:</label>
             <input type="text" name="name" className="w3-input w3-border w3-round" value={this.state.value} onChange={this.handleChange} id="taskName" /> <br/> </p>
+            <p> <input type="text"  className="w3-input w3-border w3-round" /> </p>
             <input type="submit" value="Submit" className="w3-button w3-red w3-round" />
         </form>
         

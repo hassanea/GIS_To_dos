@@ -6,6 +6,8 @@ import Create from './Create.js';
 import Modify from './Modify.js';
 import Overview from './Overview.js';
 import About from './About.js';
+//import NotFound from './NotFound.js';
+
 
 function App() {
   return (
@@ -31,6 +33,10 @@ function App() {
         <Route path='/about' render={() => (
         <About/>
         )}/>
+      
+      { //        <Route path="*" component={NotFound} status={404}/> 
+      
+      }
       
     </div>
   );

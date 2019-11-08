@@ -10,6 +10,8 @@ import AddCircleIcon from '@material-ui/icons/AddCircle';
 const useStyles = makeStyles(theme => ({
   root: {
     padding: theme.spacing(1, 2),
+    marginTop: "15px",  
+    marginBottom: "50px",  
   },
   link: {
     display: 'flex',

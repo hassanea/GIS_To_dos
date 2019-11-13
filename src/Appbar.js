@@ -15,7 +15,7 @@ const useStyles = makeStyles(theme => ({
   },
   title: {
     flexGrow: 1,
-    color: "#ffc107",
+    color: "lime",
     textShadow: "2px 2px 4px #000000",
     animation: "animatezoom 0.8s",
 },

@@ -1,4 +1,4 @@
-// Refer to these tutorial:  https://www.youtube.com/watch?v=HPIjjFGYSJ4 
+// Refer to these tutorial:  https://www.youtube.com/watch?v=HPIjjFGYSJ4
 // https://www.youtube.com/watch?v=v0t42xBIYIs
 
 
@@ -12,14 +12,13 @@ const app = express();
 const conn = mysql.createConnection({
    host: 'localhost',
    user: 'root',
-   password: '',
-   database: ''    
+   password: 'tuxMan9644!',
+   database: 'task_db'
 });
 
 conn.connect(error => {
-    if (error) {
-        return error;
-    }
+    if (error) throw error;
+    console.log(`Connected!`);
 });
 
 console.log(conn);
@@ -31,9 +30,9 @@ app.get('/', (request, response) => {
 });
 
 app.get('/tasks', (request, response) => {
-    
+  response.send('Success!')
 });
 
 app.listen(4000, () => {
-   console.log(`Tasks server listening on port 4000`) 
+   console.log(`Tasks server listening on port 4000`)
 });

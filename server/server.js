@@ -8,6 +8,8 @@ const mysql = require('mysql');
 
 const app = express();
 
+const selectAllTasks = 'SELECT * FROM TASKS';
+const insertTasks = `INSERT INTO TASKS (TASK_ID, TASK_NAME, TASK_DESC, ASSIGNED_TO, TASK_COMPLETE) VALUES ()`;
 
 const conn = mysql.createConnection({
    host: 'localhost',
@@ -26,11 +28,33 @@ console.log(conn);
 app.use(cors());
 
 app.get('/', (request, response) => {
-    response.send('Go to /tasks to see tasks data')
+    response.send('Go to /tasks to see tasks data');
 });
 
 app.get('/tasks', (request, response) => {
-  response.send('Success!')
+  conn.query(selectAllTasks, (error, results) => {
+    if (error) {
+        return response.send(error);
+    }
+
+    else {
+        return response.json({
+          data: results
+        })
+    }
+  });
+});
+
+app.get('/tasks/create', (request, response) => {
+    response.send('Tasks create!');
+});
+
+app.get('/tasks/update', (request, response) => {
+    response.send('Tasks update!');
+});
+
+app.get('/tasks/delete', (request, response) => {
+    response.send('Tasks delete!');
 });
 
 app.listen(4000, () => {

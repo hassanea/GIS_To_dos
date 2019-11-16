@@ -94,6 +94,13 @@ main {
     border: 1px solid #000;
 }
 
+.code {
+    font-size: 1.2rem;
+    color: #e83e8c;
+    word-break: break-word;
+    
+}
+
 .logo-foot {
     float: left;
     padding: 20px;

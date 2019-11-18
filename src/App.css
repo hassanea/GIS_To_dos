@@ -50,6 +50,11 @@ header, section, footer, aside, nav, main, article, figure {
     top: 0;
 }
 
+.logo {
+    padding: 20px;
+    width:400px;
+}
+
 main {
     height: auto;
     min-height: 100%;

@@ -24,6 +24,7 @@ class Overview extends React.Component {
                 <th>Task ID</th>
                 <th>Task Name</th>
                 <th>Task Description</th>
+                <th>Task Location</th>    
                 <th>Person responsible</th>
                 <th>Task Complete</th>
                 <th>Reminder</th>
@@ -39,6 +40,7 @@ class Overview extends React.Component {
                 <td>01</td>
                 <td>Feed Chicken</td>
                 <td>Feed chickens within the coup</td>
+                <td>Reroot Pontiac Headquarters</td>
                 <td>Bob McPhelman</td>
                 <td> <button className="w3-button" title="Task complete"> <DoneOutlineIcon /> </button> </td>
                 <td><button className="w3-button" title="Task reminder"> <NotificationsActiveIcon /> </button> </td>
@@ -49,6 +51,7 @@ class Overview extends React.Component {
                 <td>02</td>
                 <td>Finish paperwork</td>
                 <td>Complete tax papers</td>
+                <td>Reroot Pontiac Headquarters</td>
                 <td>Marianne Sandersson</td>
                 <td> <button className="w3-button" title="Task complete"> <DoneOutlineIcon /> </button> </td>
                 <td><button className="w3-button" title="Task reminder"> <NotificationsActiveIcon /> </button> </td>

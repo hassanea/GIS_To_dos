@@ -1,5 +1,6 @@
 import React from 'react';
-
+import ReactDOM from 'react-dom';
+import Modal from './Modal.js';
 
 const urlMapsAPI = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBm3mUKF6xpj3HzgFFALZZet1FW7ZOdqKs&callback=initMap';
 
@@ -61,6 +62,9 @@ marker.addListener('click', function() {
         // Open An InfoWindow
         infowindow.open(map, marker)
     
+        ReactDOM.render(<Modal/>, document.getElementById('modal'));
+
+    
       })    // Populates the marker's state with the markers.
         
         
@@ -73,7 +77,7 @@ marker.addListener('click', function() {
         
     <div role="region">   
         <div className="map-Container" role="application" aria-label="Interactive Map" tabIndex="0">
-          <div id="map" className="w3-margin-top w3-margin-bottom"></div> 
+          <div id="map" className="w3-margin-top w3-margin-bottom"></div>
         </div> 
     </div>     
     );

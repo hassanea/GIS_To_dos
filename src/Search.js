@@ -5,7 +5,7 @@ class Search extends React.Component {
       
     return (
             
-    <input className="search-toDos w3-wide w3-border w3-round" id="searchInput" type='text' placeholder='Search...' aria-label="Search filter"/>
+    <input className="search-toDos w3-pale-blue w3-wide w3-border w3-round" id="searchInput" type='text' placeholder='Search...' aria-label="Search filter"/>
         
     );
   }

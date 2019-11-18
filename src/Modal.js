@@ -36,7 +36,7 @@ export default function TransitionsModal() {
   return (
     <div>
       <button className="w3-bar-item w3-button" title="Tasks" type="button" onClick={handleOpen}>
-        <AssignmentIcon fontSize="large" />
+        <AssignmentIcon fontSize="large" className="w3-indigo" />
       </button>
       <Modal
         aria-labelledby="transition-modal-title"

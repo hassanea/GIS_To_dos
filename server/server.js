@@ -31,7 +31,7 @@ app.get('/', (request, response) => {
     response.send('Go to /tasks to see tasks data');
 });
 
-app.get('/tasks', (request, response) => {
+app.get('/tasks/get', (request, response) => {
   conn.query(selectAllTasks, (error, results) => {
     if (error) {
         return response.send(error);

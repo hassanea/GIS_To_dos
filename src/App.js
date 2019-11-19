@@ -9,7 +9,24 @@ import About from './About.js';
 //import NotFound from './NotFound.js';
 
 
-function App() {
+class App extends React.Component {
+
+/*constructor(props) {
+  super(props);
+  this.state = {tasks: [] };
+}
+
+componentDidMount() {
+  fetch('/tasks/get')
+      .then(response => response.json())
+      .then(response => this.setState({ tasks: response.data }))
+      .catch(error => console.error(error))
+}*/
+
+render() {
+
+/*const { tasks } = this.state;*/
+
   return (
     <div className="App">
       {/* Scheduler component */
@@ -17,29 +34,38 @@ function App() {
       <Route exact path='/' render={() => (
         <Scheduler/>
         )}/>
-      
+
        <Route path='/create' render={() => (
         <Create/>
         )}/>
-      
+
         <Route path='/modify' render={() => (
         <Modify/>
         )}/>
-      
+
         <Route path='/overview' render={() => (
         <Overview/>
         )}/>
-      
+
         <Route path='/about' render={() => (
         <About/>
         )}/>
-      
-      { //        <Route path="*" component={NotFound} status={404}/> 
-      
+
+      { //        <Route path="*" component={NotFound} status={404}/>
+
       }
-      
+
+    {
+    /*  <ul>
+        {tasks.map(task =>
+          <li key={task.TASK_ID}>{task.TASK_NAME}</li>
+        )}
+      </ul> */
+    }
+
     </div>
   );
+}
 }
 
 export default App;

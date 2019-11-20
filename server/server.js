@@ -9,6 +9,7 @@ const mysql = require('mysql');
 const app = express();
 
 const selectAllTasks = 'SELECT * FROM TASKS';
+const selectAllProperties = 'SELECT * FROM PROPERTIES';
 const insertTasks = `INSERT INTO TASKS (TASK_ID, TASK_NAME, TASK_DESC, ASSIGNED_TO, TASK_COMPLETE) VALUES ()`;
 
 const conn = mysql.createConnection({
@@ -35,6 +36,20 @@ app.get('/tasks/get', (request, response) => {
   conn.query(selectAllTasks, (error, results) => {
     if (error) {
         return response.send(error);
+    }
+
+    else {
+        return response.json({
+          data: results
+        })
+    }
+  });
+});
+
+app.get('/properties/get', (request, response) => {
+  conn.query(selectAllProperties, (error, results) => {
+    if (error) {
+      return response.send(error);
     }
 
     else {

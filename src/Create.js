@@ -27,7 +27,7 @@ handleChange(event) {
   }
 
 handleSubmit(event) {
-    alert('A Task name and desciption was submitted: ' + this.state.name + ' ' + this.state.Desc + ' ' + this.state.Location);
+    alert('A Task name and desciption was submitted: ' + this.state.name + ' ' + this.state.Desc + ' ' + this.state.Location + ' ' + this.state.Assign);
     event.preventDefault();
   }
 
@@ -81,7 +81,7 @@ handleSubmit(event) {
 
 <p className="w3-left-align">
  <label htmlFor="taskAssign" className="w3-text-purple" style={labels}>Task Assigned to:</label>  <br/>
-  <select name="Assign" id="taskAssign" className="w3-border w3-wide w3-round w3-light-grey" size="7" onChange={this.handleChange}>
+  <select name="Assign" id="taskAssign" className="w3-border w3-wide w3-round w3-light-grey" onChange={this.handleChange}>
     <option value="">Select Task Assignee</option>
     <option value="Bob">Bob</option>
     <option value="Carol">Carol</option>

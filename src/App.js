@@ -55,14 +55,6 @@ render() {
 
       }
 
-    {
-    /*  <ul>
-        {tasks.map(task =>
-          <li key={task.TASK_ID}>{task.TASK_NAME}</li>
-        )}
-      </ul> */
-    }
-
     </div>
   );
 }

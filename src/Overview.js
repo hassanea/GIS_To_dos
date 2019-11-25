@@ -1,6 +1,7 @@
 import React from 'react';
 import TaskBreadcrumb from './TaskBreadcrumb.js';
 /* https://dev.to/abdulbasit313/an-easy-way-to-create-a-customize-dynamic-table-in-react-js-3igg */
+/* https://www.w3schools.com/howto/howto_js_todolist.asp */
 import DoneOutlineIcon from '@material-ui/icons/DoneOutline';
 import NotificationsActiveIcon from '@material-ui/icons/NotificationsActive';
 import EditIcon from '@material-ui/icons/Edit';
@@ -21,6 +22,10 @@ return this.props.tasks.map(task =>
   </tr>
 )
 } */
+    
+onTaskComplete() {
+ console.log("Task Complete!")   
+}    
 
 
 
@@ -67,7 +72,7 @@ return this.props.tasks.map(task =>
                 <td>Feed chickens within the coup</td>
                 <td>Reroot Pontiac Headquarters</td>
                 <td>Bob McPhelman</td>
-                <td> <button className="w3-button" title="Task complete"> <DoneOutlineIcon /> </button> </td>
+                <td> <button className="w3-button" title="Task complete" onClick={this.onTaskComplete}> <DoneOutlineIcon /> </button> </td>
                 <td><button className="w3-button" title="Task reminder"> <NotificationsActiveIcon /> </button> </td>
               </tr>
 

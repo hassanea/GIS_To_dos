@@ -5,13 +5,17 @@ import TaskBreadcrumb from './TaskBreadcrumb.js';
 import DoneOutlineIcon from '@material-ui/icons/DoneOutline';
 import NotificationsActiveIcon from '@material-ui/icons/NotificationsActive';
 import EditIcon from '@material-ui/icons/Edit';
+import DeleteIcon from '@material-ui/icons/Delete';
+
 
 class Overview extends React.Component {
 
 
-/* renderTaskData() {
+/*renderTaskData() {
 
-return this.props.tasks.map(task =>
+  const tasks = this.props.tasks;
+
+return tasks.map(task =>
 
   <tr key={task.TASK_ID}>
     <td>{task.TASK_ID}</td>
@@ -19,13 +23,52 @@ return this.props.tasks.map(task =>
     <td>{task.TASK_DESC}</td>
     <td>{task.TASK_LOCATION}</td>
     <td>{task.ASSIGNED_TO}</td>
+    <td>
+      <button id={task.TASK_ID} className="w3-button" title="Edit Task" onClick={this.onTaskEdit}> <EditIcon /> </button>
+      <button id={task.TASK_ID} className="w3-button" title="Delete Task" onClick={this.onTaskDelete}> <DeleteIcon /> </button>
+      <button id={task.TASK_ID} className="w3-button" title="Task complete" onClick={this.onTaskComplete}> <DoneOutlineIcon /> </button>
+      <button id={task.TASK_ID} className="w3-button" title="Task reminder" onClick={this.onTaskRemind}> <NotificationsActiveIcon /> </button>
+    </td>
   </tr>
 )
-} */
-    
+}*/
+
 onTaskComplete() {
- console.log("Task Complete!")   
-}    
+ console.log("Task Complete!")
+}
+
+onTaskDelete(task) {
+  console.log("Task Deleted!")
+/*let data = {
+  id: TASK_ID
+};
+
+fetch('/tasks/delete', {
+  method: 'POST',
+  headers: {'Content-Type': 'application/json'},
+  body: JSON.stringify(data)
+}).then(function(response) {
+    if (response.status >= 400) {
+      throw new Error("Bad response from server");
+    }
+    return response.json();
+}).then(function(data){
+  if (data === "success") {
+    alert('Task record deleted successfully!')
+  }
+}).catch(function(error){
+  console.log(error)
+});*/
+
+}
+
+onTaskEdit() {
+  console.log("Task Edited!")
+}
+
+onTaskRemind() {
+  console.log("Task Reminder alert!")
+}
 
 
 
@@ -45,50 +88,50 @@ onTaskComplete() {
               <thead>
               <tr className="w3-pale-yellow">
 
-                <th>Edit</th>
+
                 <th>Task ID</th>
                 <th>Task Name</th>
                 <th>Task Description</th>
                 <th>Task Location</th>
                 <th>Person responsible</th>
-                <th>Task Complete</th>
-                <th>Reminder</th>
+                <th>Actions</th>
 
               </tr>
               </thead>
-             {
-                /* Dummy rows below!!! */
 
-             }
             <tbody>
-            {
+              {
               /*{this.renderTaskData()}*/
-            }
+              }
 
-            <tr>
-                <td><button className="w3-button" title="Task reminder"> <EditIcon /> </button> </td>
+          <tr>
                 <td>01</td>
                 <td>Feed Chicken</td>
                 <td>Feed chickens within the coup</td>
                 <td>Reroot Pontiac Headquarters</td>
                 <td>Bob McPhelman</td>
-                <td> <button className="w3-button" title="Task complete" onClick={this.onTaskComplete}> <DoneOutlineIcon /> </button> </td>
-                <td><button className="w3-button" title="Task reminder"> <NotificationsActiveIcon /> </button> </td>
+                <td>
+                  <button className="w3-button" title="Edit Task" onClick={this.onTaskEdit}> <EditIcon /> </button>
+                  <button className="w3-button" title="Delete Task" onClick={this.onTaskDelete}> <DeleteIcon /> </button>
+                  <button className="w3-button" title="Task complete" onClick={this.onTaskComplete}> <DoneOutlineIcon /> </button>
+                  <button className="w3-button" title="Task reminder" onClick={this.onTaskRemind}> <NotificationsActiveIcon /> </button>
+                </td>
               </tr>
 
             <tr>
-                <td><button className="w3-button" title="Task reminder"> <EditIcon /> </button> </td>
                 <td>02</td>
                 <td>Finish paperwork</td>
                 <td>Complete tax papers</td>
                 <td>Reroot Pontiac Headquarters</td>
                 <td>Marianne Sandersson</td>
-                <td> <button className="w3-button" title="Task complete"> <DoneOutlineIcon /> </button> </td>
-                <td><button className="w3-button" title="Task reminder"> <NotificationsActiveIcon /> </button> </td>
+                <td>
+                  <button className="w3-button" title="Edit Task" onClick={this.onTaskEdit}> <EditIcon /> </button>
+                  <button className="w3-button" title="Delete Task" onClick={this.onTaskDelete}> <DeleteIcon /> </button>
+                  <button className="w3-button" title="Task complete" onClick={this.onTaskComplete}> <DoneOutlineIcon /> </button>
+                  <button className="w3-button" title="Task reminder" onClick={this.onTaskRemind}> <NotificationsActiveIcon /> </button>
+                </td>
               </tr>
-
             </tbody>
-
              </table>
             </div>
 

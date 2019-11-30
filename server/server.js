@@ -3,6 +3,7 @@
 
 
 const express = require('express');
+const bodyParser = require('body-parser');
 const cors = require('cors');
 const mysql = require('mysql');
 
@@ -10,7 +11,8 @@ const app = express();
 
 const selectAllTasks = 'SELECT * FROM TASKS';
 const selectAllProperties = 'SELECT * FROM PROPERTIES';
-const insertTasks = `INSERT INTO TASKS (TASK_ID, TASK_NAME, TASK_DESC, ASSIGNED_TO, TASK_COMPLETE) VALUES ()`;
+const insertTasks = 'INSERT INTO TASKS SET ?';
+const delTasks = 'DELETE FROM TASKS WHERE ?'
 
 const conn = mysql.createConnection({
    host: 'localhost',
@@ -26,6 +28,8 @@ conn.connect(error => {
 
 console.log(conn);
 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: false}));
 app.use(cors());
 
 app.get('/', (request, response) => {
@@ -60,16 +64,44 @@ app.get('/properties/get', (request, response) => {
   });
 });
 
-app.get('/tasks/create', (request, response) => {
-    response.send('Tasks create!');
+app.post('/tasks/create', (request, response) => {
+
+let data = {
+TASK_NAME: request.body.Name,
+TASK_DESC: request.body.Desc,
+TASK_LOCATION: request.body.Location,
+ASSIGNED_TO: request.body.Assign
+};
+
+
+    conn.query(insertTasks, data, (error, results, fields) => {
+      if (error) {
+        return response.send(error);
+      }
+
+      else {
+        response.send(JSON.stringify(results));
+      }
+
+    });
 });
 
 app.get('/tasks/update', (request, response) => {
     response.send('Tasks update!');
 });
 
-app.get('/tasks/delete', (request, response) => {
-    response.send('Tasks delete!');
+app.delete('/tasks/delete', (request, response) => {
+    conn.query('DELETE FROM TASKS WHERE TASK_ID ='+request.body.TASK_ID+'', (error) => {
+      if (error) {
+        return response.send(error);
+      }
+
+
+      else {
+        response.send(JSON.stringify(results));
+      }
+
+    });
 });
 
 app.listen(4000, () => {

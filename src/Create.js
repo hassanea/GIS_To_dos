@@ -25,7 +25,7 @@ constructor(props) {
 
 handleSubmit(event) {
 
-    alert('A Task name and desciption was submitted: ' + this.state.name + ' ' + this.state.Desc + ' ' + this.state.Location + ' ' + this.state.Assign);
+    alert('A Task name and desciption was submitted: ' + this.state.Name + ' ' + this.state.Desc + ' ' + this.state.Location + ' ' + this.state.Assign);
 
     event.preventDefault();
   /*  let data = {

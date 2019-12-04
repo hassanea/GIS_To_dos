@@ -6,9 +6,16 @@ import DoneOutlineIcon from '@material-ui/icons/DoneOutline';
 import NotificationsActiveIcon from '@material-ui/icons/NotificationsActive';
 import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
+/*import Modal from 'react-modal';*/
 
 
 class Overview extends React.Component {
+
+
+/*constructor(props) {
+    super(props);
+    this.state = {taskComplete: [] };
+  }*/
 
 
 /*renderTaskData() {
@@ -22,10 +29,11 @@ return tasks.map(task =>
     <td>{task.TASK_NAME}</td>
     <td>{task.TASK_DESC}</td>
     <td>{task.TASK_LOCATION}</td>
+    <td>{task.TASK_COMPLETE}</td>
     <td>{task.ASSIGNED_TO}</td>
     <td>
       <button id={task.TASK_ID} className="w3-button" title="Edit Task" onClick={this.onTaskEdit}> <EditIcon /> </button>
-      <button id={task.TASK_ID} className="w3-button" title="Delete Task" onClick={this.onTaskDelete}> <DeleteIcon /> </button>
+      <button id={task.TASK_ID} className="w3-button" title="Delete Task" onClick={this.onTaskDelete(task.TASK_ID)}> <DeleteIcon /> </button>
       <button id={task.TASK_ID} className="w3-button" title="Task complete" onClick={this.onTaskComplete}> <DoneOutlineIcon /> </button>
       <button id={task.TASK_ID} className="w3-button" title="Task reminder" onClick={this.onTaskRemind}> <NotificationsActiveIcon /> </button>
     </td>
@@ -35,15 +43,18 @@ return tasks.map(task =>
 
 onTaskComplete() {
  console.log("Task Complete!")
+ /*color: red;
+text-decoration: line-through;*/
 }
 
 onTaskDelete(task) {
+  /*const tasks = this.props;*/
   console.log("Task Deleted!")
-/*let data = {
-  id: TASK_ID
+/* let data = {
+Id: tasks.TASK_ID
 };
 
-fetch('/tasks/delete', {
+fetch('/tasks/delete:TASK_ID', {
   method: 'POST',
   headers: {'Content-Type': 'application/json'},
   body: JSON.stringify(data)
@@ -58,7 +69,7 @@ fetch('/tasks/delete', {
   }
 }).catch(function(error){
   console.log(error)
-});*/
+}); */
 
 }
 
@@ -93,6 +104,7 @@ onTaskRemind() {
                 <th>Task Name</th>
                 <th>Task Description</th>
                 <th>Task Location</th>
+                <th>Status</th>
                 <th>Person responsible</th>
                 <th>Actions</th>
 
@@ -100,15 +112,15 @@ onTaskRemind() {
               </thead>
 
             <tbody>
-              {
-              /*{this.renderTaskData()}*/
-              }
 
-          <tr>
+            {  /*{this.renderTaskData()}*/
+            }
+           <tr>
                 <td>01</td>
                 <td>Feed Chicken</td>
                 <td>Feed chickens within the coup</td>
                 <td>Reroot Pontiac Headquarters</td>
+                <td>Not Complete!</td>
                 <td>Bob McPhelman</td>
                 <td>
                   <button className="w3-button" title="Edit Task" onClick={this.onTaskEdit}> <EditIcon /> </button>
@@ -123,6 +135,7 @@ onTaskRemind() {
                 <td>Finish paperwork</td>
                 <td>Complete tax papers</td>
                 <td>Reroot Pontiac Headquarters</td>
+                <td>Not Complete!</td>
                 <td>Marianne Sandersson</td>
                 <td>
                   <button className="w3-button" title="Edit Task" onClick={this.onTaskEdit}> <EditIcon /> </button>

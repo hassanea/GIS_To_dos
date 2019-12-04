@@ -1,17 +1,18 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import './App.css';
 import Scheduler from './Scheduler.js';
 import Create from './Create.js';
 import Modify from './Modify.js';
 import Overview from './Overview.js';
 import About from './About.js';
-//import NotFound from './NotFound.js';
+import NotFound from './NotFound.js';
+import InternalServer from './InternalServer.js';
 
 
 class App extends React.Component {
 
-/*constructor(props) {
+/* constructor(props) {
   super(props);
   this.state = {tasks: [] };
 }
@@ -21,7 +22,7 @@ componentDidMount() {
       .then(response => response.json())
       .then(response => this.setState({ tasks: response.data }))
       .catch(error => console.error(error))
-}*/
+} */
 
 render() {
 
@@ -31,6 +32,7 @@ render() {
     <div className="App">
       {/* Scheduler component */
       }
+      <Switch>
       <Route exact path='/' render={() => (
         <Scheduler/>
         )}/>
@@ -51,10 +53,11 @@ render() {
         <About/>
         )}/>
 
-      { //        <Route path="*" component={NotFound} status={404}/>
+        <Route path="/500" component={InternalServer} status={500}/>
 
-      }
+        <Route path="*" component={NotFound} status={404}/>
 
+      </Switch>
     </div>
   );
 }

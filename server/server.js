@@ -10,9 +10,10 @@ const mysql = require('mysql');
 const app = express();
 
 const selectAllTasks = 'SELECT * FROM TASKS';
+const selectAllTasksByID = 'SELECT * FROM TASKS WHERE TASK_ID=?';
 const selectAllProperties = 'SELECT * FROM PROPERTIES';
 const insertTasks = 'INSERT INTO TASKS SET ?';
-const delTasks = 'DELETE FROM TASKS WHERE ?'
+const delTasks = 'DELETE FROM TASKS WHERE TASK_ID=?';
 
 const conn = mysql.createConnection({
    host: 'localhost',
@@ -90,15 +91,31 @@ app.get('/tasks/update', (request, response) => {
     response.send('Tasks update!');
 });
 
-app.delete('/tasks/delete', (request, response) => {
-    conn.query('DELETE FROM TASKS WHERE TASK_ID ='+request.body.TASK_ID+'', (error) => {
+app.get('/tasks/:TASK_ID', (request, response) => {
+  conn.query(selectAllTasksByID, request.params.TASK_ID, (error, results) => {
+  if (error) {
+    return response.send(error);
+  }
+  else {
+    	  response.send(JSON.stringify(results));
+  }
+  });
+});
+
+app.delete('/tasks/delete:TASK_ID', (request, response) => {
+
+const Id = {id: request.params.TASK_ID};
+
+    conn.query(delTasks, [request.body.TASK_ID], Id, (error) => {
       if (error) {
         return response.send(error);
       }
 
 
       else {
+        request.flash('Task Deleted Successfully!!! ' + 'ID: ' + request.params.TASK_ID);
         response.send(JSON.stringify(results));
+        response.redirect('/overview');
       }
 
     });

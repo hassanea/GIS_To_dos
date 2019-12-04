@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Modal from './Modal.js';
+import RP_HQ from './Reroot-Pontiac_HQ.jpg';
 
 const urlMapsAPI = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBm3mUKF6xpj3HzgFFALZZet1FW7ZOdqKs&callback=initMap';
 
@@ -9,7 +10,7 @@ const urlMapsAPI = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBm3mUKF6xp
 class Map extends React.Component {
 
 
-  /* constructor(props) {
+/* constructor(props) {
     super(props);
 
     this.state = {mapData: [] };
@@ -20,7 +21,7 @@ class Map extends React.Component {
 componentDidMount(){
     this.renderMap()
 
-  /*  fetch('/properties/get')
+    /* fetch('/properties/get')
 
         .then(response => response.json())
 
@@ -78,7 +79,7 @@ mapData.map(data => { */
   })
 
 // Initializes Infowindow's content.
-let contentString = `<div> ${marker.title} </div>`
+let contentString = `<div> <h3>${marker.title}</h3> <img src=${RP_HQ} alt=${marker.title} width="130" height="130"/> </div>`
 
 // Marker's click event.
 marker.addListener('click', function() {
@@ -94,7 +95,7 @@ marker.addListener('click', function() {
 
       })    // Populates the marker's state with the markers.
 
-    /* }) */
+/*    }) */
         }
 
 

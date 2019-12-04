@@ -2,10 +2,12 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
-  /* font-size: calc(10px + 2vmin); */    
+  /* font-size: calc(10px + 2vmin); */
 }
 
 .App {
+  font-size: 1.125rem;
+  font-family: 'Oswald', sans-serif;
   text-align: center;
 }
 
@@ -18,7 +20,7 @@ html, body {
 }
 
 header, section, footer, aside, nav, main, article, figure {
-    display: block; 
+    display: block;
 }
 
 .skip-link {
@@ -67,15 +69,15 @@ main {
   background-repeat: no-repeat;
   background-position: 20px center;
   background-size: 1.2em;
-  font-family: 'Anton', sans-serif;    
+  font-family: 'Anton', sans-serif;
   font-size: 1.2rem;
   font-weight: bolder;
   display: block;
-  border-bottom: 2px solid #ccc;    
+  border-bottom: 2px solid #ccc;
 }
 
 .btnBar {
-    display: flex; 
+    display: flex;
     justify-content: center;
 }
 
@@ -89,7 +91,14 @@ main {
     font-size: 1.2rem;
     color: #e83e8c;
     word-break: break-word;
-    
+
+}
+
+.internalServer {
+  font-weight: bolder;
+  font-size: 3.13rem;
+  text-align: center;
+  color: #c72d2d;
 }
 
 /* Idea for Task completion!!! */
@@ -124,5 +133,5 @@ table tr .checked::before {
    position: absolute;
    clear: both;
    width: 100%;
-   height: auto;   
+   height: auto;
 }

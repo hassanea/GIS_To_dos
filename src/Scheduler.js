@@ -9,7 +9,7 @@ class Scheduler extends React.Component {
       
     return (
             
-    <div>
+    <div className="App-theme">
       {/* Appbar component */
       }    
       <Appbar/>

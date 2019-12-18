@@ -26,12 +26,10 @@ componentDidMount() {
 
 render() {
 
-/*const { tasks } = this.state;*/
+/* const { tasks } = this.state; */
 
   return (
     <div className="App">
-      {/* Scheduler component */
-      }
       <Switch>
       <Route exact path='/' render={() => (
         <Scheduler/>

@@ -7,6 +7,7 @@ import NotificationsActiveIcon from '@material-ui/icons/NotificationsActive';
 import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
 /*import Modal from 'react-modal';*/
+import EditModal from './EditModal.js';
 
 
 class Overview extends React.Component {
@@ -147,7 +148,7 @@ onTaskRemind() {
             </tbody>
              </table>
             </div>
-
+            <EditModal/>
         </div>
         </div>
     );

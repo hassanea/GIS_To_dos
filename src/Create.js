@@ -3,6 +3,7 @@ import Breadcrumb from './Breadcrumb.js';
 /*Forms tutorial: https://medium.com/better-programming/handling-multiple-form-inputs-in-react-c5eb83755d15
 ...
 */
+import {Helmet} from "react-helmet";
 
 
 class Create extends React.Component {
@@ -80,6 +81,9 @@ handleSubmit(event) {
 
 
     <div className="w3-container">
+      <Helmet>
+        <title>Reroot Task Scheduler - Create Task</title>
+      </Helmet>    
       <Breadcrumb/>
       <div className="w3-card-4">
        <div className="w3-container w3-green">

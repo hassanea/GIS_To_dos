@@ -1,5 +1,6 @@
 import React from 'react';
 import HomeIcon from '@material-ui/icons/Home';
+import {Helmet} from "react-helmet";
 
 class NotFound extends React.Component {
   render() {
@@ -7,6 +8,9 @@ class NotFound extends React.Component {
     return (
         
     <div>
+     <Helmet>
+       <title>400 - Page Not Found Error</title>
+     </Helmet>    
      <div className="w3-row">
      <div className="w3-container w3-center">
           <h1>404</h1>

@@ -8,6 +8,7 @@ import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
 /*import Modal from 'react-modal';*/
 import EditModal from './EditModal.js';
+import {Helmet} from "react-helmet";
 
 
 class Overview extends React.Component {
@@ -89,6 +90,9 @@ onTaskRemind() {
     return (
 
         <div className="w3-container">
+          <Helmet>
+            <title>Reroot Task Scheduler - Task Overview</title>
+          </Helmet>
           <TaskBreadcrumb/>
           <div className="w3-card-4">
           <div className="w3-container w3-green">

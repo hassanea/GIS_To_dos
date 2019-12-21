@@ -2,6 +2,7 @@ import React from 'react';
 import logo from './logo.png';
 import { Link } from 'react-router-dom';
 import HomeIcon from '@material-ui/icons/Home';
+import {Helmet} from "react-helmet";
 
 class About extends React.Component {
   render() {
@@ -18,6 +19,9 @@ class About extends React.Component {
     return (
         
         <div>
+         <Helmet>
+           <title>Reroot Task Scheduler - About</title>
+         </Helmet>
           <Link to="/" style={backtoHome}>
           <HomeIcon/>
           Home

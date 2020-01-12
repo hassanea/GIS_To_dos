@@ -14,13 +14,25 @@ import {Helmet} from "react-helmet";
 class Overview extends React.Component {
 
 
-/*constructor(props) {
+constructor(props) {
     super(props);
-    this.state = {taskComplete: [] };
-  }*/
+    this.state = {
+      Taskcomplete: false
+    };
+    this.onTaskEdit = this.onTaskEdit.bind(this);
+    this.onTaskDelete = this.onTaskDelete.bind(this);
+    this.onTaskComplete = this.onTaskComplete.bind(this);
+    this.onTaskRemind = this.onTaskRemind.bind(this);
+  }
+
+handleCheck(event) {
+
+    this.setState({ Taskcomplete: !this.state.Taskcomplete})
+
+  }
 
 
-/*renderTaskData() {
+/* renderTaskData() {
 
   const tasks = this.props.tasks;
 
@@ -31,7 +43,7 @@ return tasks.map(task =>
     <td>{task.TASK_NAME}</td>
     <td>{task.TASK_DESC}</td>
     <td>{task.TASK_LOCATION}</td>
-    <td>{task.TASK_COMPLETE}</td>
+    <td> <input type="checkbox" name="Taskcomplete" checked={this.state.Taskcomplete} onChange={this.handleCheck.bind(this)} id={task.TASK_ID} aria-label="Task complete"/> </td>
     <td>{task.ASSIGNED_TO}</td>
     <td>
       <button id={task.TASK_ID} className="w3-button" title="Edit Task" onClick={this.onTaskEdit}> <EditIcon /> </button>
@@ -41,22 +53,27 @@ return tasks.map(task =>
     </td>
   </tr>
 )
+} */
+
+/*handleCheck(event) {
+  this.setState({ Taskcomplete: !this.state.Taskcomplete})
 }*/
 
 onTaskComplete() {
  console.log("Task Complete!")
  /*color: red;
 text-decoration: line-through;*/
+
 }
 
-onTaskDelete(task) {
+onTaskDelete = (task, TASK_ID) => {
   /*const tasks = this.props;*/
   console.log("Task Deleted!")
-/* let data = {
-Id: tasks.TASK_ID
+ /* let data = {
+TASK_ID: task.TASK_ID
 };
 
-fetch('/tasks/delete:TASK_ID', {
+fetch('/tasks/delete', {
   method: 'POST',
   headers: {'Content-Type': 'application/json'},
   body: JSON.stringify(data)
@@ -66,13 +83,13 @@ fetch('/tasks/delete:TASK_ID', {
     }
     return response.json();
 }).then(function(data){
-  if (data === "success") {
+  if (data.code === 200) {
     alert('Task record deleted successfully!')
+    window.location.reload();
   }
 }).catch(function(error){
   console.log(error)
 }); */
-
 }
 
 onTaskEdit() {
@@ -117,15 +134,15 @@ onTaskRemind() {
               </thead>
 
             <tbody>
-
-            {  /*{this.renderTaskData()}*/
+            {
+             /* {this.renderTaskData()} */
             }
            <tr>
                 <td>01</td>
                 <td>Feed Chicken</td>
                 <td>Feed chickens within the coup</td>
                 <td>Reroot Pontiac Headquarters</td>
-                <td>Not Complete!</td>
+                <td> <input type="checkbox" name="Taskcomplete" checked={this.state.Taskcomplete} onChange={this.handleCheck.bind(this)} aria-label="Task complete"/> </td>
                 <td>Bob McPhelman</td>
                 <td>
                   <button className="w3-button" title="Edit Task" onClick={this.onTaskEdit}> <EditIcon /> </button>
@@ -140,7 +157,7 @@ onTaskRemind() {
                 <td>Finish paperwork</td>
                 <td>Complete tax papers</td>
                 <td>Reroot Pontiac Headquarters</td>
-                <td>Not Complete!</td>
+                <td> <input type="checkbox" name="Taskcomplete" checked={this.state.Taskcomplete} onChange={this.handleCheck.bind(this)} aria-label="Task complete"/> </td>
                 <td>Marianne Sandersson</td>
                 <td>
                   <button className="w3-button" title="Edit Task" onClick={this.onTaskEdit}> <EditIcon /> </button>
@@ -149,6 +166,7 @@ onTaskRemind() {
                   <button className="w3-button" title="Task reminder" onClick={this.onTaskRemind}> <NotificationsActiveIcon /> </button>
                 </td>
               </tr>
+
             </tbody>
              </table>
             </div>

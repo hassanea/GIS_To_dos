@@ -12,13 +12,13 @@ import InternalServer from './InternalServer.js';
 
 class App extends React.Component {
 
-/* constructor(props) {
+/*constructor(props) {
   super(props);
   this.state = {tasks: [] };
 }
 
 componentDidMount() {
-  fetch('/tasks/get')
+  fetch('/tasks')
       .then(response => response.json())
       .then(response => this.setState({ tasks: response.data }))
       .catch(error => console.error(error))

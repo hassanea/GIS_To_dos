@@ -16,8 +16,7 @@ constructor(props) {
         Name: '',
         Desc: '',
         Location: '',
-        Assign: '',
-        msg: ''
+        Assign: ''
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -29,7 +28,7 @@ handleSubmit(event) {
     alert('A Task name and desciption was submitted: ' + this.state.Name + ' ' + this.state.Desc + ' ' + this.state.Location + ' ' + this.state.Assign);
 
     event.preventDefault();
-  /*  let data = {
+    /* let data = {
       Name: this.state.Name,
       Desc: this.state.Desc,
       Location: this.state.Location,
@@ -48,12 +47,12 @@ handleSubmit(event) {
         return response.json();
     }).then(function(data) {
       console.log(data);
-      if (data === "success") {
-        this.setState({ msg: "New Task record created successfully!"});
-      }
+      alert("New Task record created successfully!");
+      window.location.reload();
     }).catch(function(error) {
       console.log(error);
-    });*/
+      alert("An error occured! Please checkout JS console...");
+    }); */
   }
 
 
@@ -83,7 +82,7 @@ handleSubmit(event) {
     <div className="w3-container">
       <Helmet>
         <title>Reroot Task Scheduler - Create Task</title>
-      </Helmet>    
+      </Helmet>
       <Breadcrumb/>
       <div className="w3-card-4">
        <div className="w3-container w3-green">
@@ -124,6 +123,14 @@ handleSubmit(event) {
     <option value="Olivia">Olivia</option>
     <option value="Fred">Fred</option>
     <option value="Sal">Sal</option>
+    <option value="Dean">Dean</option>
+    <option value="Sam">Sam</option>
+    <option value="Kerry">Kerry</option>
+    <option value="Yavonne">Yavonne</option>
+    <option value="Martin">Martin</option>
+    <option value="Cliff">Cliff</option>
+    <option value="Tiffany">Tiffany</option>
+    <option value="Annie">Annie</option>
   </select>
   </p>
 

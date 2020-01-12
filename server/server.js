@@ -34,10 +34,10 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(cors());
 
 app.get('/', (request, response) => {
-    response.send('Go to /tasks to see tasks data');
+    response.send('Welcome to Task Scheduler Backend API! <br> Visit /tasks to see all tasks data');
 });
 
-app.get('/tasks/get', (request, response) => {
+app.get('/tasks', (request, response) => {
   conn.query(selectAllTasks, (error, results) => {
     if (error) {
         return response.send(error);
@@ -51,7 +51,7 @@ app.get('/tasks/get', (request, response) => {
   });
 });
 
-app.get('/properties/get', (request, response) => {
+app.get('/properties', (request, response) => {
   conn.query(selectAllProperties, (error, results) => {
     if (error) {
       return response.send(error);
@@ -87,12 +87,12 @@ ASSIGNED_TO: request.body.Assign
     });
 });
 
-app.get('/tasks/update', (request, response) => {
+app.put('/tasks/update:TASK_ID', (request, response) => {
     response.send('Tasks update!');
 });
 
 app.get('/tasks/:TASK_ID', (request, response) => {
-  conn.query(selectAllTasksByID, request.params.TASK_ID, (error, results) => {
+  conn.query(selectAllTasksByID, [request.params.TASK_ID], (error, results) => {
   if (error) {
     return response.send(error);
   }
@@ -102,23 +102,30 @@ app.get('/tasks/:TASK_ID', (request, response) => {
   });
 });
 
-app.delete('/tasks/delete:TASK_ID', (request, response) => {
+app.post('/tasks/delete', (request, response) => {
 
-const Id = {id: request.params.TASK_ID};
+const id  = request.body.TASK_ID;
 
-    conn.query(delTasks, [request.body.TASK_ID], Id, (error) => {
+    conn.query(delTasks, id, (error, results) => {
       if (error) {
         return response.send(error);
       }
 
 
       else {
-        request.flash('Task Deleted Successfully!!! ' + 'ID: ' + request.params.TASK_ID);
         response.send(JSON.stringify(results));
-        response.redirect('/overview');
       }
 
     });
+});
+
+app.use(function (request, response) {
+  response.status(404).send("400 Not Found! Page does not exist...");
+});
+
+app.use(function (request, response, error) {
+  console.log(error.stack);
+  response.status(500).send("500 Something is broken!");
 });
 
 app.listen(4000, () => {

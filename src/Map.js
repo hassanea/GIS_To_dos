@@ -26,26 +26,26 @@ class Map extends React.Component {
 //
 //    this.state = {mapData: [] };
 //     this.state = {
-//       modalIsOpen: false  
+//       modalIsOpen: false
 //     };
 //    this.openModal = this.openModal.bind(this);
 //    this.afterOpenModal = this.afterOpenModal.bind(this);
 //    this.closeModal = this.closeModal.bind(this);
 //  }
-    
-    
+
+
 //  openModal() {
 //    this.setState({modalIsOpen: true});
 //  }
-// 
+//
 //  afterOpenModal() {
 //    // references are now sync'd and can be accessed.
 //    this.subtitle.style.color = '#f00';
 //  }
-// 
+//
 //  closeModal() {
 //    this.setState({modalIsOpen: false});
-//  }    
+//  }
 
 
 componentDidMount(){
@@ -112,7 +112,7 @@ mapData.map(data => { */
 let contentString = `<div> <h3>${marker.title}</h3> <img src=${RP_HQ} alt=${marker.title} width="130" height="130"/> </div>`
 
 // Marker's click event.
-marker.addListener('click', function() {
+marker.addListener('click', () => {
 
         // Change the content
         infowindow.setContent(contentString)
@@ -146,7 +146,7 @@ marker.addListener('click', function() {
 //          style={customStyles}
 //          contentLabel="Example Modal"
 //        >
-// 
+//
 //          <h2 ref={subtitle => this.subtitle = subtitle}>Hello</h2>
 //          <button onClick={this.closeModal}>close</button>
 //          <div>I am a modal</div>

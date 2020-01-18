@@ -23,7 +23,7 @@ constructor(props) {
   }
 
 
-handleSubmit(event) {
+handleSubmit = (event) => {
 
     alert('A Task name and desciption was submitted: ' + this.state.Name + ' ' + this.state.Desc + ' ' + this.state.Location + ' ' + this.state.Assign);
 
@@ -56,7 +56,7 @@ handleSubmit(event) {
   }
 
 
-  handleChange(event) {
+  handleChange = (event) => {
       this.setState({ [event.target.name]: event.target.value });
 }
 

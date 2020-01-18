@@ -23,9 +23,10 @@ constructor(props) {
     this.onTaskDelete = this.onTaskDelete.bind(this);
     this.onTaskComplete = this.onTaskComplete.bind(this);
     this.onTaskRemind = this.onTaskRemind.bind(this);
+    this.handleCheck = this.handleCheck.bind(this);
   }
 
-handleCheck(event) {
+handleCheck = (event) => {
 
     this.setState({ Taskcomplete: !this.state.Taskcomplete})
 
@@ -43,7 +44,7 @@ return tasks.map(task =>
     <td>{task.TASK_NAME}</td>
     <td>{task.TASK_DESC}</td>
     <td>{task.TASK_LOCATION}</td>
-    <td> <input type="checkbox" name="Taskcomplete" checked={this.state.Taskcomplete} onChange={this.handleCheck.bind(this)} id={task.TASK_ID} aria-label="Task complete"/> </td>
+    <td> <input type="checkbox" name="Taskcomplete" checked={this.state.Taskcomplete} onChange={this.handleCheck} id={task.TASK_ID} aria-label="Task complete"/> </td>
     <td>{task.ASSIGNED_TO}</td>
     <td>
       <button id={task.TASK_ID} className="w3-button" title="Edit Task" onClick={this.onTaskEdit}> <EditIcon /> </button>
@@ -55,11 +56,8 @@ return tasks.map(task =>
 )
 } */
 
-/*handleCheck(event) {
-  this.setState({ Taskcomplete: !this.state.Taskcomplete})
-}*/
 
-onTaskComplete() {
+onTaskComplete = () => {
  console.log("Task Complete!")
  /*color: red;
 text-decoration: line-through;*/
@@ -92,11 +90,11 @@ fetch('/tasks/delete', {
 }); */
 }
 
-onTaskEdit() {
+onTaskEdit = () => {
   console.log("Task Edited!")
 }
 
-onTaskRemind() {
+onTaskRemind = () => {
   console.log("Task Reminder alert!")
 }
 
@@ -115,7 +113,6 @@ onTaskRemind() {
           <div className="w3-container w3-green">
         <h1 className="w3-animate-top">Task Overview:</h1>
           </div>
-          <h3>Property Name:</h3>
           <div className="w3-responsive">
              <table className="w3-table-all w3-card-4 w3-hoverable w3-centered">
               <thead>
@@ -142,7 +139,7 @@ onTaskRemind() {
                 <td>Feed Chicken</td>
                 <td>Feed chickens within the coup</td>
                 <td>Reroot Pontiac Headquarters</td>
-                <td> <input type="checkbox" name="Taskcomplete" checked={this.state.Taskcomplete} onChange={this.handleCheck.bind(this)} aria-label="Task complete"/> </td>
+                <td> <input type="checkbox" name="Taskcomplete" checked={this.state.Taskcomplete} onChange={this.handleCheck} aria-label="Task complete"/> </td>
                 <td>Bob McPhelman</td>
                 <td>
                   <button className="w3-button" title="Edit Task" onClick={this.onTaskEdit}> <EditIcon /> </button>
@@ -157,7 +154,7 @@ onTaskRemind() {
                 <td>Finish paperwork</td>
                 <td>Complete tax papers</td>
                 <td>Reroot Pontiac Headquarters</td>
-                <td> <input type="checkbox" name="Taskcomplete" checked={this.state.Taskcomplete} onChange={this.handleCheck.bind(this)} aria-label="Task complete"/> </td>
+                <td> <input type="checkbox" name="Taskcomplete" checked={this.state.Taskcomplete} onChange={this.handleCheck} aria-label="Task complete"/> </td>
                 <td>Marianne Sandersson</td>
                 <td>
                   <button className="w3-button" title="Edit Task" onClick={this.onTaskEdit}> <EditIcon /> </button>

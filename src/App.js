@@ -54,7 +54,7 @@ componentDidMount() {
     
 getTaskData = () => {
     
-fetch('http://localhost:4000/tasks', {
+fetch('https://reroot-task-scheduler-db-api.herokuapp.com/tasks', {
           method: "GET",
           headers: {'Content-Type': 'application/json'},
       })
@@ -65,7 +65,7 @@ fetch('http://localhost:4000/tasks', {
 
 
 getMapData = () => {
-fetch('http://localhost:4000/properties')
+fetch('https://reroot-task-scheduler-db-api.herokuapp.com/properties')
 
         .then(response => response.json())
 
@@ -90,7 +90,7 @@ alert('A Task name, desciption, location, assignment, recurring, frequency, prio
     };
     console.log(data);
 
-    fetch ('/tasks/create', {
+    fetch ('https://reroot-task-scheduler-db-api.herokuapp.com/tasks/create', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify(data)
@@ -121,7 +121,7 @@ alert('A Task name, desciption, location, assignment, recurring, frequency, prio
 }
     
 handleTaskEdit = (TASK_ID) => {
-    		fetch("http://localhost:4000/tasks/" + TASK_ID, {
+    		fetch("https://reroot-task-scheduler-db-api.herokuapp.com/tasks/" + TASK_ID, {
 			method: "GET",
             headers: {'Content-Type': 'application/json'},    
 		})
@@ -155,7 +155,7 @@ closeEmailModal = () => {
 openEmailModal = (TASK_ID) => {
     this.setState({modalEmailIsOpen: true});
     
-      		fetch("http://localhost:4000/tasks/" + TASK_ID, {
+      		fetch("https://reroot-task-scheduler-db-api.herokuapp.com/tasks/" + TASK_ID, {
 			method: "GET",
             headers: {'Content-Type': 'application/json'},    
 		})
@@ -176,7 +176,7 @@ handleTaskUpdate = (event, TASK_ID) => {
 event.preventDefault();
        
     
-    fetch(`http://localhost:4000/tasks/update/${TASK_ID}`, {
+    fetch(`https://reroot-task-scheduler-db-api.herokuapp.com/tasks/update/${TASK_ID}`, {
 			method: "PUT",
             headers: {'Content-Type': 'application/json; charset=UTF-8', "access-control-allow-origin": "*"},
             body: JSON.stringify({
@@ -196,7 +196,7 @@ event.preventDefault();
 }
 
 handleTaskDelete = (TASK_ID) => {
-    fetch(`http://localhost:4000/tasks/delete/${TASK_ID}`, {
+    fetch(`https://reroot-task-scheduler-db-api.herokuapp.com/tasks/delete/${TASK_ID}`, {
         method: 'DELETE'
     })
     alert(`Task record #${TASK_ID} deleted successfully!`);
@@ -216,7 +216,7 @@ handleEmailSent = (event) => {
     console.log(data);
     
     
-        fetch (`http://localhost:4000/sendEmail`, {
+        fetch (`https://reroot-task-scheduler-db-api.herokuapp.com/sendEmail`, {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify(data)

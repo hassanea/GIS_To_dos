@@ -10,6 +10,7 @@ var path = require('path');
 
 
 const app = express();
+require('dotenv').config();
 const creds = require('./.env');
 
 
@@ -21,7 +22,7 @@ const selectAllPropsByID = 'SELECT * FROM PROPERTIES WHERE PROP_ID=?';
 const insertTasks = 'INSERT INTO TASKS SET ?';
 const delTasks = 'DELETE FROM TASKS WHERE TASK_ID=?';
 const updateTasks = 'UPDATE TASKS SET TASK_NAME=?, TASK_DESC=?, TASK_LOCATION=?, ASSIGNED_TO=? WHERE TASK_ID=?';
-const updateTaskComplete = 'UPDATE TASKS SET TASK_COMPLETE=? WHERE TASK_ID=?';
+
 
 const conn = mysql.createConnection({
    connectionLimit: 3,    
@@ -693,6 +694,6 @@ app.use(function (request, response, error) {
   response.status(500).send("500 Something is broken!");
 });
 
-app.listen(4000, () => {
+app.listen(process.env.PORT | creds.SERVERPORT, () => {
    console.log(`Server listening on port 4000`)
 });

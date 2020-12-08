@@ -1,0 +1,68 @@
+query: '',
+searchTasks: [],
+Recurr: false,
+Freq: '',
+Priori: '',
+AssignDate: new Date().toLocaleDateString()
+
+//import DatePicker from './DatePicker.js'
+
+  handleRadioChange = (event) => {
+    this.setState({ Priori: event.target.value });
+  }  
+  
+  handleDatechange = (event, date) => {
+      
+     const AssignDate = this.state;  
+      
+    this.setState({AssignDate: AssignDate });
+}
+
+
+
+        {
+//  <p className="w3-left-align"> <label htmlFor="taskRecurr" className="w3-text-purple" style={labels}>Recurring?</label> <input type="checkbox" className="w3-check" id="taskRecurr" name="Recurr" aria-label="Task Recurring" onChange={this.props.check} defaultChecked={this.props.Recurr}/> </p>        
+//        
+//  <p className="w3-left-align"> <label htmlFor="taskFreq" className="w3-text-purple" style={labels}>Task Frequency:</label>  <br/>
+//  <select name="Freq" id="taskFreq" className="w3-border w3-wide w3-round w3-light-grey" value={this.props.Freq} onChange={this.props.change} required>
+//    <option value="">Select Task Frequency</option>
+//    <option value="Once">One Time</option>   
+//    <option value="Twice">Two Times</option>   
+//    <option value="Thrice">Three Times</option>   
+//    <option value="Daily">Daily</option>   
+//    <option value="Weekly">Weekly</option>
+//    <option value="Monthly">Monthly</option>
+//    <option value="Yearly">Yearly</option>
+//  </select> 
+//  </p>
+      
+//import ReCAPTCHA from "react-google-recaptcha";
+//      const recaptchaRef = React.createRef();
+//      <ReCAPTCHA
+//    sitekey="6LdXs94ZAAAAAPjt7E_2fTgbVtvEm1o3E3y0npas"
+//    size="invisible"
+//    ref={recaptchaRef}    
+//    onChange={this.props.capChange}
+//  />    
+       
+       
+{    
+//<p className="w3-left-align w3-text-purple" style={labels}>
+//Task Priority:
+//</p>        
+//<p className="w3-left-align w3-text-purple"> 
+//  <input className="w3-radio w3-margin-right" type="radio" name="Priori" value="Low" checked={this.props.Priori === "Low"} onChange={this.props.radioChange}/>
+//  <label style={labels}>Low</label>
+//</p>
+//<p className="w3-left-align w3-text-purple">
+//  <input className="w3-radio w3-margin-right" type="radio" name="Priori" checked={this.props.Priori === "Medium"} onChange={this.props.radioChange} value="Medium"/>
+//  <label style={labels}>Medium</label>        
+//</p>
+//<p className="w3-left-align w3-text-purple">
+//  <input className="w3-radio w3-margin-right" type="radio" name="Priori" checked={this.props.Priori === "High"} onChange={this.props.radioChange} value="High"/>
+//  <label style={labels}>High</label>        
+//</p>        
+} 
+       
+//   <div className="w3-left"><DatePicker name="AssignDate" value={this.props.AssignDate} onChange={this.props.date}/></div>
+        }

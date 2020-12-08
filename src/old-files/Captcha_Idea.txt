@@ -1,0 +1,7 @@
+this.handleCaptcha = this.handleCaptcha.bind(this);
+
+
+handleCaptcha = (value) => {
+  console.log("Captcha value:", value)
+}
+

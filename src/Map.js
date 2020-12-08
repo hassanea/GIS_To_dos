@@ -1,63 +1,20 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import Modal from './Modal.js';
 import RP_HQ from './Reroot-Pontiac_HQ.jpg';
-//import Modal from 'react-modal';
+
 
 const urlMapsAPI = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBm3mUKF6xpj3HzgFFALZZet1FW7ZOdqKs&callback=initMap';
 
 
-/*const customStyles = {
-  content : {
-    top                   : '50%',
-    left                  : '50%',
-    right                 : 'auto',
-    bottom                : 'auto',
-    marginRight           : '-50%',
-    transform             : 'translate(-50%, -50%)'
-  }
-};*/
+
 
 class Map extends React.Component {
 
 
-// constructor(props) {
-//    super(props);
-//
-//    this.state = {mapData: [] };
-//     this.state = {
-//       modalIsOpen: false
-//     };
-//    this.openModal = this.openModal.bind(this);
-//    this.afterOpenModal = this.afterOpenModal.bind(this);
-//    this.closeModal = this.closeModal.bind(this);
-//  }
 
-
-//  openModal() {
-//    this.setState({modalIsOpen: true});
-//  }
-//
-//  afterOpenModal() {
-//    // references are now sync'd and can be accessed.
-//    this.subtitle.style.color = '#f00';
-//  }
-//
-//  closeModal() {
-//    this.setState({modalIsOpen: false});
-//  }
 
 
 componentDidMount(){
     this.renderMap()
-
-    /* fetch('/properties/get')
-
-        .then(response => response.json())
-
-        .then(response => this.setState({ mapData: response.data }))
-
-        .catch(error => console.error(error)) */
 
 
     // Error handling: For when the Google Maps API key authenication fails.
@@ -120,9 +77,6 @@ marker.addListener('click', () => {
         // Open An InfoWindow
         infowindow.open(map, marker)
 
-        ReactDOM.render(<Modal/>, document.getElementById('modal'));
-
-
       })    // Populates the marker's state with the markers.
 
 /*    }) */
@@ -137,28 +91,6 @@ marker.addListener('click', () => {
         <div className="map-Container" role="application" aria-label="Interactive Map" tabIndex="0">
           <div id="map" className="w3-margin-top w3-margin-bottom"></div>
         </div>
-        {
-//        <button onClick={this.openModal}>Open Modal</button>
-//        <Modal
-//          isOpen={this.state.modalIsOpen}
-//          onAfterOpen={this.afterOpenModal}
-//          onRequestClose={this.closeModal}
-//          style={customStyles}
-//          contentLabel="Example Modal"
-//        >
-//
-//          <h2 ref={subtitle => this.subtitle = subtitle}>Hello</h2>
-//          <button onClick={this.closeModal}>close</button>
-//          <div>I am a modal</div>
-//          <form>
-//            <input />
-//            <button>tab navigation</button>
-//            <button>stays</button>
-//            <button>inside</button>
-//            <button>the modal</button>
-//          </form>
-//        </Modal>
-      }
     </div>
     );
   }

@@ -24,16 +24,21 @@ header, section, footer, aside, nav, main, article, figure {
 
 .skip-link {
     position: absolute;
-    text-decoration: underline;
-    top: -40px;
-    left: 0;
-    background: orange;
-    color: navy;
+    top: auto;
+    left: -10000px;
+    background: #BF1722;
+    width:1px; 
+    height:1px; 
+    overflow:hidden;
+    color: #fff;
     padding: 8px;
     z-index: 100;
 }
 
 .skip-link:focus {
+    position:static; 
+    width:auto; 
+    height:auto; 
     top: 0;
 }
 
@@ -61,6 +66,29 @@ main {
     }
 }
 
+.open-search {
+  position: fixed;
+  z-index: 1;
+  right: 25px;
+  bottom: 25px;
+}
+
+.open-search a {
+  display: block;
+  z-index: 1;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #8bc34a;
+  background-image: url('./icons/search-solid.svg');
+    outline: 6px #000;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 28px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  font-size: 0;
+}
+
 .search-toDos {
   width: 100%;
   padding: 20px 20px 20px 60px;
@@ -75,12 +103,63 @@ main {
   border-bottom: 2px solid #ccc;
 }
 
+.search-places {
+  width: 100%;
+  padding: 20px 20px 20px 60px;
+  background-image: url('./icons/search-location-solid.svg');
+  background-repeat: no-repeat;
+  background-position: 20px center;
+  background-size: 1.2em;
+  font-family: 'Anton', sans-serif;
+  font-size: 1.2rem;
+  font-weight: bolder;
+  display: block;
+  border-bottom: 2px solid #ccc;
+}
+
+.close-search {
+  display: block;
+  top: 20px;
+  left: 15px;
+  width: 50px;
+  height: 53px;
+  background: white;
+  background-image: url('./icons/arrow-back.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 28px;
+  font-size: 0;
+}
+
+label {
+    font-weight: bolder;
+}
+
+.modalInputs {  
+   width: 50%;    
+}
+
 .btnBar {
     display: flex;
     justify-content: center;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.btnSubmit {
+  width: 33%;
+  font-weight: bolder;
 }
 
 #map {
+    width: 100%;
+    height: 100vh;
+    border: 1px solid #000;
+}
+
+.webmap {
     width: 100%;
     height: 100vh;
     border: 1px solid #000;
@@ -100,8 +179,56 @@ main {
   color: #c72d2d;
 }
 
+table {
+    /* w3-table-all w3-card-4 w3-hoverable w3-centered */
+    
+   border-collapse:collapse;
+    border-spacing:0;
+    width:100%;
+    display:table;
+    border:1px solid #ccc
+}
+
+table tbody tr:hover {
+    background-color:#ccc;
+}
+
+table tr th, table tr td { 
+  text-align:center;
+}
+
+table, table:hover { 
+  box-shadow:0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19);
+}
+
+table tr {
+  border-bottom:1px solid #ddd;
+}
+
+table tr:nth-child(odd) { 
+  background-color:#fff;
+}
+
+table tr:nth-child(even) {
+  background-color:#f1f1f1;
+}
+
+table td, table th {
+    padding:8px 8px;
+    display:table-cell;
+    text-align:left;
+    vertical-align:top;
+}
+
+table th:first-child, table td:first-child{
+    padding-left:16px;
+}
+
+tr th {
+    background: #ddffdd;
+    color: #3f51b5;
+}
 /* Idea for Task completion!!! */
-/*
 table tr .checked {
   background: #888;
   color: #fff;
@@ -120,7 +247,12 @@ table tr .checked::before {
   height: 15px;
   width: 7px;
 }
-*/
+
+.id-link:hover {
+    background-color: #fff;
+    outline: 2px violet solid;
+    font-weight: bolder;
+}
 
 .logo-foot {
     float: left;

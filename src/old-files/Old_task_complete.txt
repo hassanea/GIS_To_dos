@@ -1,0 +1,43 @@
+// Put below react state constructor function: 
+
+this.handleTaskCompleteEdit = this.handleTaskCompleteEdit.bind(this);
+
+// event
+//handleTaskCompleteEdit = (TASK_ID) => {
+///* https://github.com/PerfectTechCoding/crudapp-react
+//   https://www.youtube.com/watch?v=qRm35KtMZzw
+//*/
+//    		fetch("http://localhost:4000/tasks/" + TASK_ID, {
+//			method: "GET",
+//            headers: {'Content-Type': 'application/json'},    
+//		})
+//			.then((response) => response.json())
+//			.then((response) => {
+//				console.log(response);
+//                this.setState({
+//                    modalCompleteIsOpen: true,
+//                    ID: TASK_ID,
+//                    taskUpdate: true,
+//                    Taskcomplete: response[0].TASK_COMPLETE
+//                });
+//                
+//                console.log(this.state.ID);
+//			})
+//			.catch((error) => console.log("Error", error));
+//    
+//}
+
+//    fetch(`http://localhost:4000/tasks/taskComplete/update/${TASK_ID}`, {
+//			method: "PUT",
+//            headers: {'Content-Type': 'application/json; charset=UTF-8', "access-control-allow-origin": "*"},
+//            body: JSON.stringify({
+//                Taskcomplete: this.state.Taskcomplete,
+//            })
+//		})
+//			.then((response) => {
+//				console.log(response.json());
+//                console.log(response.data);
+////                alert(`Task record #${TASK_ID} completed!`);
+////                window.location.reload();
+//			})
+//			.catch((error) => console.log("Error", error)); 

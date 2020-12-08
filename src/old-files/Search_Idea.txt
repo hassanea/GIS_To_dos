@@ -1,0 +1,23 @@
+updateQuery = (event, query) => {
+    console.log("onChange:", event.target.value)
+  this.setState({query: event.target.value});
+    this.updateSearchTasks(query);
+}
+
+
+    updateSearchTasks = (query) => {
+        
+        const tasks = this.props;
+        
+        if (query) {
+          tasks.search(query).then((searchTasks) => {
+              if (searchTasks.error) {
+                  this.setState({ searchTasks: [] });
+              } else {
+                  this.setState({ searchTasks: searchTasks });
+              }
+            })    
+        } else {
+            this.setState({ searchTasks: [] });
+        }  
+    }

@@ -694,6 +694,6 @@ app.use(function (request, response, error) {
   response.status(500).send("500 Something is broken!");
 });
 
-app.listen(process.env.PORT | creds.SERVERPORT, () => {
+app.listen(process.env.PORT | 4000, () => {
    console.log(`Server listening on port 4000`)
 });

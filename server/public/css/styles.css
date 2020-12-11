@@ -1,0 +1,48 @@
+body {
+    font-size: 1.2rem;
+    background: #f1f1f1;
+    font-weight: 300;    
+}
+
+.skip-link {
+    position: absolute;
+    top: auto;
+    left: -10000px;
+    background: #BF1722;
+    width:1px; 
+    height:1px; 
+    overflow:hidden;
+    color: white;
+    padding: 8px;
+    z-index: 100;
+}
+
+.skip-link:focus {
+    position:static; 
+    width:auto; 
+    height:auto; 
+    top: 0;
+}
+
+#sprout-icon {
+    font-size:4rem; 
+    margin-right:10px;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.font-bold {
+    font-weight: bolder;
+}
+
+.w3-codespan{
+  color: #8B0E28;
+  background-color: #f1f1f1;    
+}
+
+a:hover {
+    background-color: #fff;
+    outline: 2px violet solid;
+}

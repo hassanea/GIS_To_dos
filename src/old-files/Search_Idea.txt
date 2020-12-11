@@ -1,3 +1,22 @@
+//  ExpressJS - Search tasks idea ???
+
+//app.get('/tasks/search?Name=${Name}', (request, response) => {
+//  conn.query(selectAllTasks, (error, results) => {
+//    if (error) {
+//        return response.send(error);
+//    }
+//
+//    else {
+//        return response.json({
+//          data: results
+//        })
+//        console.log(results);
+//    }
+//  });
+//});
+
+
+
 updateQuery = (event, query) => {
     console.log("onChange:", event.target.value)
   this.setState({query: event.target.value});

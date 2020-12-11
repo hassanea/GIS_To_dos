@@ -45,6 +45,7 @@
       "last 1 safari version"
     ]
   },
+  "proxy": "https://reroot-task-scheduler-db-api.herokuapp.com",
   "devDependencies": {
     "react-snap": "^1.23.0"
   }

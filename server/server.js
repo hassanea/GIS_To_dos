@@ -5,15 +5,25 @@ const http = require('http');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const mysql = require('mysql');
+const morgan = require('morgan');
 var path = require('path');
-
-
-
+const compression = require('compression');
 const app = express();
+const Port = process.env.Port || 4000;
 require('dotenv').config();
 const creds = require('./.env');
+const dev = app.get('env') == 'development';
+const prod = app.get('env') == 'production';
 
+if (dev) {
+  app.use(morgan('dev'));     
+}
 
+if (prod) {
+  app.disable("x-powered-by");    
+  app.use(compression());
+  app.use(morgan('common'));  
+}
 
 const selectAllTasks = 'SELECT * FROM TASKS';
 const selectAllTasksByID = 'SELECT * FROM TASKS WHERE TASK_ID=?';
@@ -46,15 +56,16 @@ app.use(express.json());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(cors());
-app.use(express.static('public'))
-app.use(express.static('css'))
-app.use(express.static('js'))
-app.use(express.static(path.join(__dirname, 'public','css', 'js')));
+app.use(express.static('public'));
+app.use(express.static('css'));
+app.use(express.static('js'));
+app.use(express.static('images'));
+app.use(express.static(path.join(__dirname, 'public','css', 'js', 'images')));
 const nodemailer = require('nodemailer');
 
 
 // Get tasks data
-app.get('https://reroot-task-scheduler-db-api.herokuapp.com/tasks', (request, response) => {
+app.get('/tasks', (request, response) => {
   conn.query(selectAllTasks, (error, results) => {
     if (error) {
         return response.send(error);
@@ -70,7 +81,7 @@ app.get('https://reroot-task-scheduler-db-api.herokuapp.com/tasks', (request, re
 });
 
 // Get properties data
-app.get('https://reroot-task-scheduler-db-api.herokuapp.com/properties', (request, response) => {
+app.get('/properties', (request, response) => {
   conn.query(selectAllProperties, (error, results) => {
     if (error) {
       return response.send(error);
@@ -112,7 +123,7 @@ transporter.verify((error, success) => {
   }
 });
 
-app.post('https://reroot-task-scheduler-db-api.herokuapp.com/sendEmail', (req, res, next) => {
+app.post('/sendEmail', (req, res, next) => {
     
     
   const recipName = req.body.recipName;
@@ -563,7 +574,7 @@ app.post('https://reroot-task-scheduler-db-api.herokuapp.com/sendEmail', (req, r
 })
 
 // Create task functionality
-app.post('https://reroot-task-scheduler-db-api.herokuapp.com/tasks/create', (request, response) => {
+app.post('/tasks/create', (request, response) => {
 
 let data = {
 TASK_NAME: request.body.Name,
@@ -589,7 +600,7 @@ ASSIGNED_TO: request.body.Assign
 });
 
 // Update task by TASK ID #
-app.put('https://reroot-task-scheduler-db-api.herokuapp.com/tasks/update/:TASK_ID', (request, response) => {
+app.put('/tasks/update/:TASK_ID', (request, response) => {
     
 const TASK_NAME = request.body.Name;    
 const TASK_DESC = request.body.Desc;
@@ -617,7 +628,7 @@ const id  = request.params.TASK_ID;
 });
 
 // Get task by Task ID #
-app.get('https://reroot-task-scheduler-db-api.herokuapp.com/tasks/:TASK_ID', (request, response) => {
+app.get('/tasks/:TASK_ID', (request, response) => {
     
 const id = request.params.TASK_ID;   
     
@@ -633,7 +644,7 @@ const id = request.params.TASK_ID;
 });
 
 // Get property by Property ID #
-app.get('https://reroot-task-scheduler-db-api.herokuapp.com/properties/:PROP_ID', (request, response) => {
+app.get('/properties/:PROP_ID', (request, response) => {
     
 const id = request.params.PROP_ID;  
     
@@ -649,7 +660,7 @@ const id = request.params.PROP_ID;
 });
 
 // Delete task by Task ID #
-app.delete('https://reroot-task-scheduler-db-api.herokuapp.com/tasks/delete/:TASK_ID', (request, response) => {
+app.delete('/tasks/delete/:TASK_ID', (request, response) => {
 
 const id  = request.params.TASK_ID;
 
@@ -678,6 +689,10 @@ app.use(function (request, response, error) {
   response.status(500).send("500 Something is broken!");
 });
 
-app.listen(process.env.PORT || 4000, () => {
-   console.log(`Server listening on port 4000`)
+//if (process.env.NODE_ENV === 'production') {
+//    app.use(express.static('client/build'));
+//}
+
+app.listen(Port, () => {
+   console.log(`Server listening on port ${Port}`)
 });

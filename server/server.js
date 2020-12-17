@@ -9,7 +9,6 @@ const morgan = require('morgan');
 var path = require('path');
 const compression = require('compression');
 const app = express();
-const Port = process.env.Port || 4000;
 require('dotenv').config();
 const creds = require('./.env');
 const dev = app.get('env') == 'development';
@@ -689,10 +688,6 @@ app.use(function (request, response, error) {
   response.status(500).send("500 Something is broken!");
 });
 
-//if (process.env.NODE_ENV === 'production') {
-//    app.use(express.static('client/build'));
-//}
-
-app.listen(Port, () => {
-   console.log(`Server listening on port ${Port}`)
+app.listen(process.env.PORT || 4000, () => {
+   console.log(`Server listening...`)
 });

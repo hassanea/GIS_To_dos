@@ -80,7 +80,7 @@ const columns = [
         key: 'TASK_ID',
         defaultSorting: 'ASC',
         dataProps: { className: 'align-right' },
-        render: (TASK_ID) => { return <a href={'http://localhost:4000/tasks/'+TASK_ID} title={'Task #' + TASK_ID} className="id-link">{TASK_ID}</a>; }
+        render: (TASK_ID) => { return <a href={'https://api.reroot-task-scheduler.com/tasks/'+TASK_ID} title={'Task #' + TASK_ID} className="id-link">{TASK_ID}</a>; }
       },
       {
         header: 'Task Name',

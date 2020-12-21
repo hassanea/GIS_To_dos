@@ -76,7 +76,7 @@ fetch('https://api.reroot-task-scheduler.com/properties')
     
     
     
-handleSubmit = (event, insertID) => {
+handleSubmit = (event) => {
 
 alert('A Task name, desciption, location, assignment, recurring, frequency, priority, and assigned date was submitted: ' + this.state.Name + ' ' + this.state.Desc + ' ' + this.state.Location + ' ' + this.state.Assign + ' ');
 
@@ -101,7 +101,7 @@ alert('A Task name, desciption, location, assignment, recurring, frequency, prio
         return response.json();
     }).then(function(data) {
       console.log(data);
-      alert(`New Task record #${insertID} created successfully!`);
+      alert(`New Task record created successfully!`);
       window.location.reload();
     }).catch(function(error) {
       console.log(error);

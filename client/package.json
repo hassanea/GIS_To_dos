@@ -36,6 +36,6 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://reroot-task-scheduler-db-api.herokuapp.com",
+  "proxy": "https://api.reroot-task-scheduler.com",
   "devDependencies": {}
 }
